@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasso Carta Forbici</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="titolo">
+            <img src='foto/titolo.png' />
+        </div>
+        <div class="split left">
+            <div class="centrato">
+                <div class="punteggio palyer">
+                    <p>PUNTEGGIO-<span id="nome-player"></span></p>
+                    <h1 id="il_mio_punteggio">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="split right">
+            <div class="centrato">
+                <div class="punteggio cpu">
+                    <p>PUNTEGGIO-computer</p>
+                    <h1 id="il_punteggio_avversario">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="gara">
+            <div class="mia-mano">
+                <h1>TU</h1>
+                <img id="la_mia_scelta">
+            </div>
+            <div class="cpu-mano">
+                <h1>IL COMPUTER</h1>
+                <img id="la_scelta_avversaria">
+            </div>
+        </div>
+
+        <div class="giocate">
+            <div id="scelte"></div>
+        </div>
+        <p id="messaggi"></p>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

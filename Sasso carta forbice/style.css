@@ -1,0 +1,210 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  text-align: center;
+  background: radial-gradient(134.34% 134.34% at 50% 0%, #1f3757 0%, #131537 100%);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-width: 600px;
+}
+
+.titolo {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.split {
+  position: relative;
+  top:30%;
+}
+
+.left {
+  left: -25%;
+}
+
+.right {
+  right: -25%;
+}
+
+.centrato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.punteggio {
+  width: auto;
+  min-width: 250px;
+  height: 114px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.punteggio.player{
+  margin-right: 30px;
+}
+
+.punteggio.cpu{
+  margin-left: 30px;
+}
+
+.punteggio h1 {
+  color: #565468;
+  font-size: 56px;
+  font-family: "Barlow", sans-serif;
+}
+
+.punteggio p {
+  color: #2a45c2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 2.5px;
+  text-align: left;
+}
+
+.punteggio p span {
+  color: #2a45c2;
+}
+
+.mia-mano{
+  width: 200px;
+  height: 200px;
+  margin-right: 50px;
+}
+
+.cpu-mano {
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+}
+
+.giocate {
+  background-image: url("foto/triangolo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  width: 476px;
+  height: 430px;
+  margin-top: 100px;
+  display: flex;
+  z-index: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: scale(0.7);
+}
+
+.giocate img {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+.giocate .carta {
+  margin-right: 20px;
+  margin-top: -150px;
+}
+
+.giocate .forbici {
+  margin-left: 100px;
+  margin-top: 70px;
+}
+
+.giocate .sasso {
+  margin-left: 200px;
+  margin-top: -30px;
+}
+
+.giocate .mano {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.giocate .mano:hover {
+  transform: translateY(-20px);
+}
+
+.gara {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.gara h1 {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#messaggi {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  top: -50px;
+  position: relative;
+}
+
+@media screen and (max-width: 1600px) {
+  .punteggio{
+    transform: scale(0.8);
+  }
+
+  .split{
+    top: 0;
+  }
+
+  .gara{
+    padding-top: 40px;
+  }
+  .titolo{
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .giocate{
+    transform: scale(0.5);
+  }
+
+  .mia-mano img, .cpu-mano img{
+    width: 170px;
+    height: 170px;
+  }
+  .gara{
+    top: 100px;
+    position: relative;
+  }
+
+  .split{
+    top: 60px;
+  }
+}

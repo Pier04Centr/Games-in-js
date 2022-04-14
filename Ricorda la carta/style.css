@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #9d1dff, #276fff);
+}
+
+.griglia {
+  background: #ffffff;
+  display: grid;
+  grid-template: repeat(3, 200px) / repeat(4, 200px);
+  width: 800px;
+  height: 600px;
+  margin: 75px auto 0;
+}
+
+.carte {
+  background-color: transparent;
+  perspective: 1000px;
+  margin: 5px;
+}
+
+.doppia-faccia {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.faccia,
+.dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.faccia {
+  background: #222;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dorso {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+.faccia img {
+  width: 120px;
+}
+
+.attivata {
+  transform: rotateY(180deg);
+}

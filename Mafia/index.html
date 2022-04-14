@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <title>Mafia Italiana</title>
+</head>
+
+<body>
+    <main id="partita" class="partita" onclick="myShootingEffects()">
+
+        <div id="vita"></div>
+
+        <div class="mafioso" style="left: 030px;"></div>
+        <div class="mafioso" style="left: 200px;"></div>
+        <div class="mafioso" style="left: 330px;"></div>
+        <div class="mafioso" style="left: 430px;"></div>
+        <div class="mafioso" style="left: 500px;"></div>
+        <div class="mafioso" style="left: 640px;"></div>
+
+        <button onclick="Nuova_Partita()" id="NuovaPartita">
+
+            <span class="HaiVinto">
+                <p><span class="emoji">🙌</span> Hai vinto <span class="emoji">🙌</span></p>
+            </span>
+            <span class="HaiPerso">
+                <p><span class="emoji">😵</span> Morto <span class="emoji">😵</span></p>
+            </span>
+            <span class="Benvenuto">
+                <p><span class="emoji">💸</span> Fatti un nome! <span class="emoji">💸</span></p>
+            </span>
+            <p>🧨 Nuova Partita 💣</p>
+
+        </button>
+
+    </main>
+
+</body>
+<script src="script.js"></script>
+
+</html>

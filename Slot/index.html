@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stileslot.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+<title>Slot Machine</title>
+<script>
+
+function esegui () {
+ var frutti = ["&#x1F951", "&#x1F351", "&#x1F34D", "&#x1F95D", "&#x1f34c"];
+ var estratti = [];
+ 
+ n1 = parseInt (Math.random() * 5);
+ n2 = parseInt (Math.random() * 5);
+ n3 = parseInt (Math.random() * 5);
+ document.getElementById("a").innerHTML = frutti[n1];
+ document.getElementById("b").innerHTML = frutti[n2];
+ document.getElementById("c").innerHTML = frutti[n3];
+ if ((n1==n2) && (n2==n3)) {
+   document.getElementById("result").innerHTML = "Complimenti hai vinto!";
+ } else {
+   document.getElementById("result").innerHTML = "Non hai vinto! Prova ancora"; 
+ }
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Slot Machine</h1>
+  <p>Tenta la tua fortuna</p>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h3 id="a"><span>&#x1F95D;</span></h3>
+  </div>
+  <div class="column">
+    <h3 id="b"><span>&#x1F34C;</span></h3>
+  </div>  
+  <div class="column">
+    <h3 id="c"><span>&#x1F34D;</span></h3>
+  </div>
+</div>
+
+<div class="footer">
+  <input type="button" name="go" value="Gioca!" onclick="esegui()" class="topnav";>
+  <h2 id="result"></h2>
+</div>
+
+<img src="https://png2.cleanpng.com/sh/766536e03bda8bd79805a541d317a3dc/L0KzQYm3WMA6N5d5R91yc4Pzfri0jfllbJ1qRdNwZYOwc7F6lQVubV51eeR9eT36f77ojr1kdJD5gNt3Zz3lgrLDmvVze15oh982dHX2hH75hgZqbagyiNH7bnBxdcXDlBVzc15qitH9aXuwdr20VfI3a5ZoTKs8ZXKzQIe1VME0OWM2SKI6NUO2SIe8UMM0OmY7UJD5bne=/kisspng-middle-ages-costume-party-woman-clothing-brazzers-com-test-review-pornonetzwerk-erotik-fl-5b6cec493eb006.4131210015338650332568.png" width="250" height="500" class="fakeimg" >
+
+</body>
+</html>

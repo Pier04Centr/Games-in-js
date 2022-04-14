@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="creatore">
+        <h1>SNAKE<span>by Pierpaolo Centrone</span></h1>
+    </div>
+    <div class="container">
+        <div class="console">
+            <button id="rigioca" onclick="ricarica();">Rincomincia</button>
+            <canvas id="partita" width="400" height="400" /> <!-- canvas è la tela su cui creo il gioco -->
+        </div>
+        <div class="punteggio">
+            <h2>Punti <span id="punti">0</span></h2>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

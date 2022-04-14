@@ -1,0 +1,173 @@
+* {
+	box-sizing: border-box;
+}
+
+#partita {
+	height: 600px;
+	width: 800px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	background-color: #2a3d66;
+}
+
+#partita.mafiososparando {
+	background-color: #e01414;
+}		
+
+#partita.playersparando {
+	background-color: #ffffff;
+}
+
+#vita {
+	background-color: #2bff00;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+
+#NuovaPartita {
+	position: absolute;
+	display: block;
+	border: none;
+	padding: 16px;
+	box-shadow: none; 
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 2;
+}
+
+#NuovaPartita span {
+	display: none;
+}
+
+#partita.player_vincitore .HaiVinto,
+#partita.playermorto .HaiPerso,
+#partita.partita .Benvenuto,
+.partita #NuovaPartita,
+.playermorto #NuovaPartita,
+.player_vincitore #NuovaPartita {
+	display: block;
+}
+
+.mafioso {
+	background-color: #ffe0bd;
+	position: absolute;
+	height: 400px;
+	width: 150px;
+	bottom: -100%;
+	transition: all .5s;
+}
+
+.mafioso.mostra {
+	bottom: -10%;
+}
+
+.mafioso.sparando {
+	background-color: #551800;
+}
+
+.mafioso.morto {
+	transform: rotate(-90deg);
+	transform-origin: bottom left;
+	bottom: -18%;
+	background-color: white;
+	margin-left: 20%;
+}
+
+
+
+/* Aspetto */
+
+body {
+	font-family: sans-serif;
+	background-color: #0f0f0f;
+}
+
+#partita {
+	cursor: crosshair;
+	border-radius: 10px;
+}
+
+#vita {
+	transition: 1.5s;
+}
+
+#NuovaPartita {
+	background: radial-gradient(circle, #5d54a4, #d789d7);
+	color: white;
+	cursor: pointer;
+	font-size: 30px;
+	font-weight: bold;	
+    font-family: 'Gochi Hand', cursive;
+}
+
+#NuovaPartita p {
+	font-size: 1.5em;
+	margin-top: 0.5em;
+	color: #000000;
+}
+
+#NuovaPartita .emoji {
+	display: block;
+	font-size: 50px;
+}
+
+.mafioso {
+	border-top: 80px solid  #000000;
+	border-bottom: 150px solid  #000000;
+	border-radius: 30px;
+	box-shadow: 0 -1px 14px #ffffff5c;
+}
+
+
+/* Faccia */
+.mafioso:before {
+	content: "o_ಠ";
+	text-align: center;
+	width: 100%;
+	left: -7.5%;
+	position: absolute;
+	font-size: 85px;
+}
+
+/* Arma */
+.mafioso:after {
+    content: "°";
+    color: #363636;
+    position: absolute;
+    bottom: -50px;
+    left: -32px;
+    font-size: 80px;
+    background-color: #000000;
+    border-radius: 16px;
+    border-left: 6px solid  #252525;
+    border-bottom: 12px solid  #121212;
+    box-sizing: border-box;
+    line-height: .5em;
+    width: 52px;
+    text-align: center;
+    padding-top: 17px;
+}
+
+.mafioso.sparando {
+	box-shadow: inset 50px 0 25px #ff6c3698;
+	color: #ffffff4d;
+	border-color: #361C17;
+}
+
+.mafioso.sparando:after {
+    content: "*";
+    color: #8a0000;
+    background-color: #421e11;
+    border-color: #5C1A19;
+    transform: scale(1.5);
+}
+
+.mafioso.morto {
+	background-color: #faefe1;
+}

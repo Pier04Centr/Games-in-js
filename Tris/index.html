@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stiletris.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Roboto&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+<title>Matrici e tabelle</title>
+<script>
+var mat = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]];
+var turno = 0;
+var primoclick = true;
+var gameover;
+
+function clean () {
+  gameover=false;
+  for (i=0; i<3; i++) {
+    for (j=0; j<3; j++) {
+      document.getElementById("m"+i+j).innerHTML = mat[i][j];
+    }
+  }
+}
+
+function Nome() {
+	Giocatore1 = prompt("Giocatore 1 inserisci il tuo nome");
+	Giocatore2 = prompt("Giocatore 2 inserisci il tuo nome");
+
+	document.getElementById("gioc1").innerHTML += Giocatore1;
+	document.getElementById("gioc2").innerHTML += Giocatore2;
+}
+
+
+function play (r,c) {
+ if (primoclick) {
+    clean ();
+    primoclick = false;
+ }
+ if ((gameover == false) && (mat[r][c] == " ")) {
+  if (turno%2==0) {	
+  	mat[r][c]="&#x2718";
+  	giocatore=Giocatore1;
+  } else {
+  	mat[r][c]="&#11093";
+  	giocatore=Giocatore2;
+  }
+  document.getElementById("m"+r+c).innerHTML = mat[r][c];
+  turno++;
+
+  if(mat[0][0] != " " && mat[0][0]==mat[0][1] && mat[0][0]==mat[0][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+  } else if(mat[1][0] != " " && mat[1][0]==mat[1][1] && mat[1][0]==mat[1][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+  } else if(mat[2][0] != " " && mat[2][0]==mat[2][1] && mat[2][0]==mat[2][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+
+  } else if(mat[0][0] != " " && mat[0][0]==mat[1][0] && mat[0][0]==mat[2][0]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+
+  }  else if(mat[0][1] != " " && mat[0][1]==mat[1][1] && mat[0][1]==mat[2][1]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+ 
+  } else if(mat[0][2] != " " && mat[0][2]==mat[1][2] && mat[0][2]==mat[2][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+
+  } else if(mat[0][0] != " " && mat[0][0]==mat[1][1] && mat[0][0]==mat[2][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+  }else if(mat[2][0] != " " && mat[2][0]==mat[1][1] && mat[2][0]==mat[0][2]) {
+  	document.getElementById("result").innerHTML = "Complimenti " + giocatore + ", hai vinto❕";
+    gameover=true;
+  } else if (turno==9) {
+    document.getElementById("result").innerHTML = "Nessuno dei due giocatori ha vinto❕ Pareggio❕";
+    gameover=true;
+  }
+
+  }
+}
+
+</script>
+</head>
+
+<body>
+
+  <div class="header">
+  <h1>TIC TAC TOE</h1>
+  <p><b>Gioca al tris più bello che esista</b></p>
+
+  </div>
+
+	<table border="1"class = "center">
+	<tr>
+	<td id="m00" onclick="play(0,0);" class="cella">T</td>
+	<td id="m01" onclick="play(0,1);" class="cella">I</td>
+	<td id="m02" onclick="play(0,2);" class="cella">C</td>
+	</tr>
+	<tr>
+	<td id="m10" onclick="play(1,0);" class="cella">T</td>
+	<td id="m11" onclick="play(1,1);" class="cella">A</td>
+	<td id="m12" onclick="play(1,2);" class="cella">C</td>
+	</tr>
+	<tr>
+	<td id="m20" onclick="play(2,0);" class="cella">T</td>
+	<td id="m21" onclick="play(2,1);" class="cella">O</td>
+	<td id="m22" onclick="play(2,2);" class="cella">E</td>
+	</tr>
+	</table>
+
+<div class="footer">
+  <input type="button" name="go" value="Restart❕"onClick="window.location.reload();" class="bottone"; >
+  <h2 id="result"></h2>
+</div>
+
+<h2 id = "gioc1" class="Giocatore1"> 
+	Giocatore 1 : <br>
+</h2>
+
+<h2 id = "gioc2" class="Giocatore2"> 
+	Giocatore 2 : <br>
+</h2>
+
+<img src="BMO.png" class="rightimg">
+<img src="FIN.png" class="leftimg" >
+
+<script> Nome() </script>
+
+<audio controls autoplay loop class="audio">
+  <source src="musica.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
